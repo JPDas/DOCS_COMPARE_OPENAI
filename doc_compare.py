@@ -15,7 +15,7 @@ from langchain.chains.summarize import load_summarize_chain
 from langchain.vectorstores import Chroma
 
 
-os.environ["OPENAI_API_KEY"] = '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'
+os.environ["OPENAI_API_KEY"] = 'sk-'
 class DocumentsCompare:
     def __init__(self, file1, file2) -> None:
         self.upload_file1 = file1
@@ -102,13 +102,7 @@ class DocumentsCompare:
         
         return prompt
     def llm_compare(self, prompt):
-        # chain = load_qa_chain(ChatOpenAI(temperature=0, 
-        #                   openai_api_key="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",
-        #                   model="gpt-3.5-turbo"), chain_type='stuff')
-
         llm = OpenAI()
 
         response = llm.predict(prompt)
-
-
         return response
